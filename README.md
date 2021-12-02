@@ -26,4 +26,6 @@ You can run my solutions as follows:
 source(system.file("run-day01.R", package = "adventofcode21"))
 ```
 
-> Package structure courtesy of [TJ Mahr's 📦 aoc](https://github.com/tjmahr/aoc)!
+## Miscellaneous
+* This package structure is courtesy of [TJ Mahr's 📦 aoc](https://github.com/tjmahr/aoc)!
+* This is my first time participating in Advent of Code and my solutions are first-drafts. Hopefully, I can spend some time optimizing them before next December! I'm excited to learn from everyone else's work!
