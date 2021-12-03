@@ -195,7 +195,7 @@ f03a <- function(x) {
     purrr::map_dbl(c("gamma", "epsilon"), ~ {
       f03_make_matrix(x) %>%
         apply(2, f03_apply_fun(.x)) %>%
-        BinToDec()
+        base_to_dec()
     })
   )
 
@@ -221,11 +221,10 @@ f03_apply_fun <- function(rate_type) {
   eval(parse(text = paste0('function(x) if (mean(x)', operator, ' 0.5) 1 else 0')))
 }
 
-# From https://stackoverflow.com/questions/12892348/convert-binary-string-to-binary-or-decimal-value
 # #' @rdname day03
 #' @export
-BinToDec <- function(x)  {
-  sum(2^(which(rev(unlist(strsplit(as.character(x), "")) == 1))-1))
+base_to_dec <- function(x)  {
+  strtoi(paste(x, collapse = ""), 2)
 }
 
 #' @rdname day03
@@ -241,7 +240,7 @@ f03b <- function(x) {
         data <- data[data[,col] == com,]
         col <- col + 1
       }
-      BinToDec(data)
+      base_to_dec(data)
 
     })
   )
